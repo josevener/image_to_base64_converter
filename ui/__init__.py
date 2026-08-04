@@ -1,0 +1,1 @@
+"""Qt reusable shell components."""

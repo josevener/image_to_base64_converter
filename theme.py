@@ -2,25 +2,19 @@
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
 from typing import Any
 
+from services.database_service import DatabaseService
 
-SETTINGS_PATH = Path(__file__).with_name("settings.json")
-DEFAULT_SETTINGS: dict[str, Any] = {"theme": "Dark", "last_folder": "", "recent_files": []}
+DEFAULT_SETTINGS: dict[str, Any] = {"theme": "Light", "last_folder": "", "recent_files": []}
 
 
 def load_settings() -> dict[str, Any]:
-    try:
-        values = json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
-        return {**DEFAULT_SETTINGS, **values}
-    except (OSError, json.JSONDecodeError):
-        return DEFAULT_SETTINGS.copy()
+    return DatabaseService().load_settings()
 
 
 def save_settings(settings: dict[str, Any]) -> None:
-    SETTINGS_PATH.write_text(json.dumps(settings, indent=2), encoding="utf-8")
+    DatabaseService().save_settings(settings)
 
 
 def add_recent(settings: dict[str, Any], path: str) -> None:

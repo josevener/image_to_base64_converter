@@ -1,7 +1,14 @@
 """Application entry point."""
 
-from ui import ImageBase64App
+import sys
+
+from PySide6.QtWidgets import QApplication
+
+from app import ApplicationController
 
 
 if __name__ == "__main__":
-    ImageBase64App().run()
+    application = QApplication(sys.argv)
+    controller = ApplicationController()
+    controller.show()
+    sys.exit(application.exec())
