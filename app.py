@@ -6,6 +6,7 @@ from PySide6.QtGui import QAction, QKeySequence
 
 from pages.base64_to_image import Base64ToImagePage
 from pages.api_client import ApiClientPage
+from pages.about import AboutPage
 from pages.background_remover import BackgroundRemoverPage
 from pages.compress import CompressPage
 from pages.crop import CropPage
@@ -44,6 +45,7 @@ class ApplicationController:
             "QR Code Reader": QrReaderPage(),
             "QR Code Generator": QrGeneratorPage(),
             "Settings": SettingsPage(),
+            "About": AboutPage(),
             "Wi-Fi Connections": WifiConnectionsPage(),
         }
         for name, page in self._pages.items():

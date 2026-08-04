@@ -5,6 +5,8 @@ Its first production-ready tool, **Image to Base64**, encodes image files to Bas
 Data URI text. The collapsible Qt sidebar animates smoothly and completely hides to
 give the active tool the full window width.
 
+Developed by [Zentrix Solutions](https://zentrix-solutions.vercel.app).
+
 ## Architecture
 
 The code follows MVC boundaries:
@@ -52,10 +54,20 @@ Use **Browse Image** or drop a supported file anywhere in the window. The app ac
 
 ## Package
 
-The project includes a minimal `assets/icon.ico`; replace it with your own branding if desired, then run:
+The project includes a minimal `assets/icon.ico`; replace it with your own branding if desired.
+
+### Create the application bundle
+
+Install PyInstaller, then build using the included spec file:
 
 ```powershell
-pyinstaller --onefile --windowed --icon assets/icon.ico main.py
+pip install pyinstaller
+pyinstaller app.spec
 ```
 
-If no icon is needed, omit the `--icon` argument.
+This creates `dist\DeveloperToolbox\DeveloperToolbox.exe` and its required Qt files.
+
+### Create the Windows installer
+
+Open `installer.iss` in Inno Setup Compiler and select **Build → Compile**. The
+installer is written to `installer_output\DeveloperToolbox-Setup-1.0.0.exe`.
