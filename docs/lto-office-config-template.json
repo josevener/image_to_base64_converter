@@ -1,0 +1,154 @@
+{
+  "profile_type": "local_starter",
+  "authority_reference": "Local starter configuration",
+  "office": {
+    "code": "1396",
+    "name": "VALENZUELA DISTRICT OFFICE",
+    "address": "CRISTOBAL ST. GEN. T. DE LEON VALENZUELA",
+    "tin": "000865491001",
+    "pos_machine": "VALENZUELA MV - CASHIER"
+  },
+  "rules": {
+    "version": "starter-1",
+    "effective_from": "2020-01-01",
+    "effective_until": "",
+    "initial_years": 3,
+    "renewal_early_days": 60,
+    "validity_mode": "plate_schedule",
+    "fees": {
+      "initial": [
+        {
+          "description": "Cost of plate",
+          "amount": "120.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "MVUC",
+          "amount": "720.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "Science Tax",
+          "amount": "40.50",
+          "basis": "fixed"
+        },
+        {
+          "description": "Science Tax Penalty",
+          "amount": "7.50",
+          "basis": "fixed"
+        },
+        {
+          "description": "Transfer Fee",
+          "amount": "50.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "Legal Research Fee",
+          "amount": "10.00",
+          "basis": "fixed"
+        }
+      ],
+      "renewal": [
+        {
+          "description": "Cost of plate",
+          "amount": "120.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "MVUC",
+          "amount": "720.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "Science Tax",
+          "amount": "40.50",
+          "basis": "fixed"
+        },
+        {
+          "description": "Science Tax Penalty",
+          "amount": "7.50",
+          "basis": "fixed"
+        },
+        {
+          "description": "Transfer Fee",
+          "amount": "50.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "Legal Research Fee",
+          "amount": "10.00",
+          "basis": "fixed"
+        }
+      ],
+      "transfer": [
+        {
+          "description": "Cost of plate",
+          "amount": "120.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "MVUC",
+          "amount": "720.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "Science Tax",
+          "amount": "40.50",
+          "basis": "fixed"
+        },
+        {
+          "description": "Science Tax Penalty",
+          "amount": "7.50",
+          "basis": "fixed"
+        },
+        {
+          "description": "Transfer Fee",
+          "amount": "50.00",
+          "basis": "fixed"
+        },
+        {
+          "description": "Legal Research Fee",
+          "amount": "10.00",
+          "basis": "fixed"
+        }
+      ]
+    }
+  },
+  "series": [
+    {
+      "kind": "transaction",
+      "prefix": "LOCAL-{office}-{type}-{date}-",
+      "width": 6,
+      "first": 1,
+      "last": 999999
+    },
+    {
+      "kind": "receipt",
+      "prefix": "LOCAL-{office}-",
+      "width": 6,
+      "first": 1,
+      "last": 999999
+    },
+    {
+      "kind": "mv_file",
+      "prefix": "0000",
+      "width": 11,
+      "first": 1,
+      "last": 99999999999
+    },
+    {
+      "kind": "client",
+      "prefix": "LOCAL-CLIENT-",
+      "width": 6,
+      "first": 1,
+      "last": 999999
+    },
+    {
+      "kind": "plate",
+      "prefix": "LOCAL",
+      "width": 4,
+      "first": 1001,
+      "last": 9999
+    }
+  ]
+}

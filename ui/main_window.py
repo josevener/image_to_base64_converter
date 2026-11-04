@@ -26,8 +26,9 @@ class MainWindow(QMainWindow):
         ("NETWORK TOOLS", ["Wi-Fi Connections"]),
         ("INFORMATION", ["Image Metadata", "Image Statistics", "Color Picker", "Palette Extractor"]),
         ("QR TOOLS", ["QR Code Reader", "QR Code Generator"]),
+        ("LTO", ["Registration Workspace", "Official Receipt"]),
         ("BATCH PROCESSING", ["Batch Converter"]),
-        ("UTILITIES", ["Favorites", "History", "Settings", "About"]),
+        ("UTILITIES", ["Input Activity Monitor", "Favorites", "History", "Settings", "About"]),
     ]
 
     def __init__(self) -> None:
@@ -161,5 +162,9 @@ class MainWindow(QMainWindow):
             QTabWidget::pane {{ border: 1px solid {border}; border-radius: 6px; }} QTabBar::tab {{ background: {surface}; color: {muted}; padding: 8px 12px; border: 1px solid {border}; border-bottom: 0; }} QTabBar::tab:selected {{ background: {field}; color: {text}; font-weight: 600; }}
             QMenu {{ background: {surface}; color: {text}; border: 1px solid {border}; }} QMenu::item:selected {{ background: #2F80ED; color: white; }}
             QPushButton {{ background: #2F80ED; color: #FFFFFF; border: 0; border-radius: 6px; padding: 8px 12px; font-weight: 600; }} QPushButton:hover {{ background: #1967D2; }} QPushButton:disabled {{ background: {border}; color: {muted}; }}
+            #secondaryButton {{ background: {field}; color: {text}; border: 1px solid {border}; }} #secondaryButton:hover {{ background: {border}; }}
+            QSpinBox, QDateEdit, QDateTimeEdit {{ background: {field}; color: {text}; border: 1px solid {border}; border-radius: 6px; padding: 5px; }}
+            QTableWidget {{ background: {field}; alternate-background-color: {surface}; color: {text}; gridline-color: {border}; border: 1px solid {border}; border-radius: 6px; selection-background-color: #2F80ED; selection-color: white; }}
+            QHeaderView::section {{ background: {surface}; color: {text}; padding: 6px; border: 0; border-bottom: 1px solid {border}; }}
             #dangerButton {{ background: #A84242; }} #dangerButton:hover {{ background: #843333; }} #base64Output {{ background: {field}; color: {text}; border: 1px solid {border}; border-radius: 6px; font-family: 'Cascadia Mono'; font-size: 11px; }}
         """)

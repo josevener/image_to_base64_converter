@@ -1,0 +1,27 @@
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local build artifacts
+build/
+dist/
+installer_output/
+
+# Local aggregate reports; retain the directory marker only.
+exports/*.csv
+exports/screenshots/
+!exports/.gitkeep
+
+# Generated local receipt documents and PDF QA artifacts
+exports/*.pdf
+tmp/
+output/
+
+# Operational registry data and local backups
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+local-data/
+registry-backups/

@@ -8,6 +8,8 @@ import shutil
 import sqlite3
 from pathlib import Path
 from typing import Any
+from typing import Iterator
+from contextlib import contextmanager
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -39,10 +41,15 @@ class DatabaseService:
                 return
 
     @staticmethod
-    def _connect() -> sqlite3.Connection:
+    @contextmanager
+    def _connect() -> Iterator[sqlite3.Connection]:
         connection = sqlite3.connect(DATABASE_PATH)
         connection.row_factory = sqlite3.Row
-        return connection
+        try:
+            with connection:
+                yield connection
+        finally:
+            connection.close()
 
     def _initialize(self) -> None:
         is_new = not DATABASE_PATH.exists()
